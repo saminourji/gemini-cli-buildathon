@@ -1,0 +1,8 @@
+description = "Pastes an image from the clipboard to image.png"
+prompt = """
+Execute the following command and do nothing else:
+osascript -e "set png_data to the clipboard as «class PNGf»" \
+  -e "set the_file to open for access POSIX file \"$(pwd)/image.png\" with write permission" \
+  -e "write png_data to the_file" \
+  -e "close access the_file"
+"""
